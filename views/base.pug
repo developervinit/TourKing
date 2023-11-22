@@ -1,0 +1,41 @@
+doctype html
+html 
+ head
+  //- 'block head' will add 'script' tag from tour.pug file's 'block append head' 
+  block head 
+    meta(charset='UTF-8') 
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')  
+    //- #{tour} it is called interpolation just like template string 
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='shortcut icon', type='image/png', href='/img/favicon.png') 
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+    title TourKing | #{title}
+
+ body 
+  // Header 
+  include _header
+   
+  // Content
+  block content
+   h1 this is a Placeholder heading AND content of base file 
+
+   
+  // Footer
+  include _footer
+
+  
+
+
+  //- axios cdn. this will expose it to global scope
+  //-script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js') 
+  //-including mapbox.js file. it also will be included where base.js file is extended 
+  //-script(src='/js/mapbox.js') 
+  //-including login.js file. it also will be included where base.js file is extended 
+  //-script(src='/js/login.js')
+
+  script(src="https://js.stripe.com/v3/")
+  script(src='/js/bundle.js')
+
+
+
+   
